@@ -1,0 +1,3 @@
+[submodule "lab-spring-mvc"]
+	path = lab-spring-mvc
+	url = https://github.com/Pedro-HFelix/lab-spring-mvc.git
