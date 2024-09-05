@@ -1,0 +1,370 @@
+/* === About Section === */
+main #about {
+    margin: 5vh 10vh;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+}
+
+main #about #image,
+main #about #content {
+    width: 50%;
+}
+
+main #about #content #title,
+main #about #content #text {
+    font-weight: 300;
+}
+
+main #about #content #title {
+    margin-bottom: 2vh;
+}
+
+main #about #content #text {
+    text-align: justify;
+}
+
+main #about #image img {
+    width: 450px;
+}
+
+/* === Menu Section === */
+main #menu {
+    padding-bottom: 5vh;
+    background-color: var(--goldenrod-yellow);
+}
+
+main #menu #title {
+    font-weight: 300;
+    padding: 5vh 2vw 3vh 2vw;
+    text-align: center;
+}
+
+main #menu #options {
+    padding: 2vh 0;
+    display: flex;
+    justify-content: center;
+    gap: 8em;
+}
+
+main #menu #options .option {
+    width: 350px;
+    height: 360px;
+    background-color: var(--pale-gold-yellow);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: ease all 0.3s;
+}
+
+main #menu #options .option:hover {
+    box-shadow: 0px 2px 10px 2px var(--charcoal-blue);
+}
+
+main #menu #options .option .icons {
+    margin-bottom: 4vh;
+}
+
+main #menu #options .option .icons img {
+    width: 120px;
+    margin: 0 0.8vw;
+}
+
+main #menu #options .option h3 {
+    font-size: 1.4em;
+    font-weight: 300;
+}
+
+/* ===  Developers Section === */
+main #developers {
+    padding-bottom: 5vh;
+}
+
+main #developers #title {
+    font-weight: 300;
+    padding: 5vh 2vw 3vh 2vw;
+    color: var(--white-color);
+    text-align: center;
+}
+
+main #developers #options {
+    padding: 2vh 0;
+    display: flex;
+    justify-content: center;
+    gap: 8em;
+}
+
+main #developers #options .option {
+    width: 350px;
+    height: 430px;
+    background-color: var(--pale-gold-yellow);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: ease all 0.3s;
+}
+
+main #developers #options .option:hover {
+    box-shadow: 0px 2px 10px 2px var(--charcoal-blue);
+}
+
+main #developers #options .option .avatar {
+    margin-bottom: 4vh;
+}
+
+main #developers #options .option .avatar img {
+    width: 250px;
+    margin: 0 0.8vw;
+}
+
+main #developers #options .option h3 {
+    font-size: 1.2em;
+    font-weight: 300;
+    padding: 0.7em;
+    border-radius: 10px;
+    background-color: var(--pink-color);
+    color: var(--white-color);
+}
+
+main #developers #options .option h3 a {
+    color: var(--white-color);
+    transition: ease all 0.5s;
+}
+
+main #developers #options .option h3 a:hover {
+    font-weight: 500;
+}
+
+/* === Media Queries === */
+@media screen and (max-width: 1238px) {
+    main #about {
+        margin: 0 5vh;
+    }
+}
+
+@media screen and (max-width: 998px) {
+    main #about {
+        margin: 8vh 10vh;
+        flex-direction: column;
+    }
+
+    main #about #image,
+    main #about #content {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    main #about #image {
+        margin-bottom: 4vh;
+    }
+
+    main #menu #options .option {
+        width: 320px;
+        height: 330px;
+    }
+
+    main #developers #options .option {
+        width: 320px;
+    }
+
+    main #developers #options .option h3 {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 839px) {
+    main #menu #options,
+    main #developers #options {
+        gap: 4em;
+    }
+
+    main #menu #options .option {
+        width: 280px;
+    }
+
+    main #menu #options .option .icons img {
+        width: 100px;
+    }
+
+    main #developers #options .option {
+        width: 280px;
+        height: 400px;
+    }
+
+    main #developers #options .option .avatar img {
+        width: 200px;
+    }
+
+    main #developers #options .option h3 {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 642px) {
+    main #menu #options .option {
+        width: 260px;
+        height: 300px;
+    }
+
+    main #menu #options .option .icons img {
+        width: 80px;
+    }
+
+    main #menu #options .option h3 {
+        font-size: 1.2em;
+    }
+
+    main #developers #options .option {
+        width: 260px;
+        height: 370px;
+    }
+
+    main #developers #options .option .avatar img {
+        width: 170px;
+    }
+}
+
+@media screen and (max-width: 598px) {
+    main #about {
+        margin: 8vh 5vh;
+        flex-direction: column;
+    }
+
+    main #about #image img {
+        width: 380px;
+    }
+}
+
+@media screen and (max-width: 593px) {
+    main #menu #options,
+    main #developers #options {
+        gap: 3em;
+    }
+
+    main #menu #options .option {
+        width: 220px;
+        height: 280px;
+    }
+
+    main #developers #options .option {
+        width: 220px;
+        height: 350px;
+    }
+
+    main #developers #options .option .avatar img {
+        width: 150px;
+    }
+
+    main #developers #options .option h3 {
+        font-size: 0.8em;
+        padding: 0.9em;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    main #about #image img {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 504px) {
+    main #menu #options,
+    main #developers #options {
+        gap: 2em;
+    }
+
+    main #menu #options .option {
+        width: 200px;
+        height: 240px;
+    }
+
+    main #menu #options .option .icons img {
+        width: 70px;
+    }
+
+    main #menu #options .option h3 {
+        font-size: 1.1em;
+    }
+
+    main #developers #options .option {
+        width: 200px;
+        height: 320px;
+    }
+
+    main #developers #options .option h3 {
+        font-size: 0.75em;
+    }
+}
+
+@media screen and (max-width: 448px) {
+    main #menu #options .option {
+        width: 165px;
+        height: 200px;
+    }
+
+    main #menu #options .option .icons img {
+        width: 60px;
+    }
+
+    main #menu #options .option h3 {
+        font-size: 1em;
+    }
+
+    main #developers #options .option {
+        width: 165px;
+        height: 260px;
+    }
+
+    main #developers #options .option .avatar img {
+        width: 120px;
+    }
+
+    main #developers #options .option h3 {
+        font-size: 0.65em;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    main #menu #options .option {
+        width: 155px;
+        height: 190px;
+    }
+
+    main #menu #options .option .icons img {
+        width: 55px;
+    }
+
+    main #menu #options .option h3 {
+        font-size: 0.9em;
+    }
+
+    main #developers #options .option {
+        width: 155px;
+        height: 240px;
+    }
+
+    main #developers #options .option .avatar img {
+        width: 110px;
+    }
+
+    main #developers #options .option h3 {
+        font-size: 0.6em;
+    }
+}
+
+@media screen and (max-width: 406px) {
+    main #about #image img {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    main #about #image img {
+        width: 250px;
+    }
+}

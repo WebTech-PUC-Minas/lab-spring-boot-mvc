@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciar Tarefas | Listify</title>
+
+    <!-- === Favicon === -->
+    <link rel="icon" type="image/svg+xml" th:href="@{/images/favicon.png}" />
+
+    <!-- === Font === -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- === Font Awesome === -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+
+    <!-- === CSS Files === -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" th:href="@{/css/tasks/manage-tasks.css}" />
+
+</head>
+<body>
+<div id="message" th:if="${redirectMessage}" th:text="${redirectMessage}" style="display: none;"></div>
+
+<!-- === Header === -->
+<header>
+    <a href="/">
+        <img th:src="@{/images/black-logo.png}" alt="Logotipo da Listify" />
+    </a>
+    <nav>
+        <a href="/" onclick="showNavbar()">Home</a>
+        <a href="/tasks" onclick="showNavbar()">
+            <i class="fa-regular fa-clock"></i> Pendentes
+        </a>
+        <a href="/tasks/completed" onclick="showNavbar()">
+            <i class="fa-regular fa-square-check"></i> Concluídas
+        </a>
+        <button class="nav_btn nav_close_btn" onclick="showNavbar()">
+            <span class="fa fa-times"></span>
+        </button>
+    </nav>
+    <button class="nav_btn" onclick="showNavbar()">
+        <span class="fa fa-bars"></span>
+    </button>
+</header>
+
+<!-- === Content === -->
+<main>
+    <!-- === Add Task Section === -->
+    <section id="add-task">
+        <h1 class="title">Adicione uma Tarefa</h1>
+        <div id="form-container">
+            <form th:action="@{/tasks/save}" th:object="${taskForm}" method="post">
+                <input type="text" placeholder="Digite aqui sua tarefa" th:field="*{title}" />
+
+                <textarea placeholder="Digite aqui uma descrição para sua tarefa" th:field="*{description}"></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- === Pending Tasks Section === -->
+    <section id="pending-tasks">
+        <h1 class="title">Veja suas Tarefas Pendentes</h1>
+        <div id="pending-tasks-container">
+            <ul>
+                <li th:each="task : ${tasks}" th:id="${task.id}">
+                    <form th:action="@{/tasks/update/taskId={taskId}(taskId=${task.id})}" method="get">
+                        <input
+                                type="checkbox"
+                                th:checked="${task.isCompleted}"
+                                onchange="this.form.submit()"
+                                onclick="return confirm('Tem certeza que deseja atualizar esta tarefa?');"
+                        />
+                    </form>
+
+
+
+                    <a
+                            th:href="@{/tasks/delete/taskId={taskId}(taskId=${task.id})}"
+                            onclick="return confirm('Tem certeza que deseja excluir esta tarefa?');"
+                            class="trash-link"
+                    >
+                        <img
+                                class="trash"
+                                th:src="@{/images/manage-tasks/trash-icon.svg}"
+                                alt="Ícone de lixeira"
+                                style="cursor: pointer;"
+                        />
+                    </a>
+
+                    <a th:href="@{/tasks/taskId={taskId}(taskId=${task.id})}">
+                        <p th:text="${task.title}"></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<!-- === Footer === -->
+<footer>
+    <p>
+        Desenvolvido por
+        <a href="https://github.com/ArturColen" target="_blank">Artur Bomtempo</a> &
+        <a href="https://github.com/Pedro-HFelix" target="_blank">Pedro Félix</a>
+    </p>
+</footer>
+
+<!-- === JS File === -->
+<script th:src="@{/js/menu.js}"></script>
+<script th:src="@{/js/AlertMessage.js}"></script>
+</body>
+</html>

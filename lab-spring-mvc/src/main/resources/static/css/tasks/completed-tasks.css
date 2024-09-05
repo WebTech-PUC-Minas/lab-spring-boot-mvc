@@ -1,0 +1,104 @@
+/* === Completed Tasks Section === */
+main #completed-tasks #title {
+    font-weight: 300;
+    padding: 5vh 2vw 3vh 2vw;
+    color: var(--white-color);
+    text-align: center;
+}
+
+main #completed-tasks #completed-tasks-container {
+    width: 60%;
+    margin: 3vh auto 10vh auto;
+}
+
+main #completed-tasks #completed-tasks-container ul li {
+    margin: 2vh 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+main #completed-tasks #completed-tasks-container ul li input {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--goldenrod-yellow);
+    border-radius: 5px;
+    background-color: var(--charcoal-blue);
+    position: relative;
+    cursor: pointer;
+}
+
+main #completed-tasks #completed-tasks-container ul li input:checked {
+    background-color: var(--charcoal-blue);
+}
+
+main #completed-tasks #completed-tasks-container ul li input:checked::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    width: 8px;
+    height: 14px;
+    border: solid var(--white-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+main #completed-tasks #completed-tasks-container ul li img {
+    width: 22px;
+    margin: 0 1vw;
+}
+
+main #completed-tasks #completed-tasks-container ul li p {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: var(--white-color);
+    font-size: 1.1em;
+    font-weight: 300;
+    color: var(--white-color);
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    text-decoration: line-through;
+}
+
+/* === Media Queries === */
+@media screen and (max-width: 1041px) {
+    main #add-task #form-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 787px) {
+    main #add-task #form-container {
+        width: 80%;
+    }
+
+    main #completed-tasks #completed-tasks-container {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    main #completed-tasks #completed-tasks-container {
+        width: 85%;
+    }
+
+    main #completed-tasks #completed-tasks-container ul li input {
+        width: 25px;
+        height: 25px;
+    }
+
+    main #completed-tasks #completed-tasks-container ul li img {
+        width: 18px;
+        margin: 0 2vw;
+    }
+
+    main #completed-tasks #completed-tasks-container ul li input:checked::after {
+        top: 2px;
+        left: 6px;
+    }
+}

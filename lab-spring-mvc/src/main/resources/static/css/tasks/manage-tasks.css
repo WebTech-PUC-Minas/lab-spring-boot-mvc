@@ -1,0 +1,170 @@
+main .title {
+    font-weight: 300;
+    padding: 5vh 2vw 3vh 2vw;
+    color: var(--white-color);
+    text-align: center;
+}
+
+/* === Add Task Section === */
+main #add-task #form-container {
+    width: 60%;
+    margin: 0 auto 3vh auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #add-task #form-container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+main #add-task #form-container form input,
+main #add-task #form-container form textarea {
+    font-size: 1.1em;
+    font-weight: 300;
+    border-radius: 10px;
+    padding: 0 1.5vw;
+    background-color: var(--pale-gold-yellow);
+    color: var(--black-color);
+}
+
+main #add-task #form-container form input {
+    height: 8vh;
+}
+
+main #add-task #form-container form textarea {
+    height: 30vh;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: justify;
+    resize: none;
+}
+
+main #add-task #form-container form button {
+    width: 200px;
+    font-size: 1.1em;
+    font-weight: 400;
+    margin: 2vh auto 0 auto;
+    padding: 01vh;
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--pink-color);
+    color: var(--white-color);
+    cursor: pointer;
+    transition: ease all 0.5s;
+}
+
+main #add-task #form-container form button:hover {
+    opacity: 85%;
+}
+
+/* === Pending Tasks Section === */
+main #pending-tasks #pending-tasks-container {
+    width: 60%;
+    margin: 3vh auto 10vh auto;
+}
+
+main #pending-tasks #pending-tasks-container ul li {
+    margin: 2vh 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+main #pending-tasks #pending-tasks-container ul li input {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--goldenrod-yellow);
+    border-radius: 5px;
+    background-color: var(--charcoal-blue);
+    position: relative;
+    cursor: pointer;
+}
+
+main #pending-tasks #pending-tasks-container ul li input:checked {
+    background-color: var(--charcoal-blue);
+}
+
+main #pending-tasks #pending-tasks-container ul li input:checked::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    width: 8px;
+    height: 14px;
+    border: solid var(--white-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+main #pending-tasks #pending-tasks-container ul li .trash-link {
+    width: 22px;
+    margin: 0 1vw;
+}
+
+main #pending-tasks #pending-tasks-container ul li .trash-link img{
+    width: 25px;
+}
+
+main #pending-tasks #pending-tasks-container ul li a {
+    width: 90%;
+}
+
+main #pending-tasks #pending-tasks-container ul li a:hover {
+    opacity: 60%;
+}
+
+main #pending-tasks #pending-tasks-container ul li p {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: var(--white-color);
+    font-size: 1.1em;
+    font-weight: 300;
+    color: var(--white-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+/* === Media Queries === */
+@media screen and (max-width: 1041px) {
+    main #add-task #form-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 787px) {
+    main #add-task #form-container {
+        width: 80%;
+    }
+
+    main #pending-tasks #pending-tasks-container {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    main #pending-tasks #pending-tasks-container {
+        width: 85%;
+    }
+
+    main #pending-tasks #pending-tasks-container ul li input {
+        width: 25px;
+        height: 25px;
+    }
+
+    main #pending-tasks #pending-tasks-container ul li img {
+        width: 18px;
+        margin: 0 2vw;
+    }
+
+    main #pending-tasks #pending-tasks-container ul li input:checked::after {
+        top: 2px;
+        left: 6px;
+    }
+}

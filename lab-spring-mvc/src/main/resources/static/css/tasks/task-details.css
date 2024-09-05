@@ -1,0 +1,57 @@
+/* === Task Details Section === */
+main #task-details #title,
+main #task-details #task-name {
+    font-weight: 300;
+    color: var(--white-color);
+    text-align: center;
+}
+
+main #task-details #title {
+    padding: 5vh 2vw 3vh 2vw;
+}
+
+main #task-details #task-name {
+    margin-bottom: 10vh;
+}
+
+main #task-details #task-details-container {
+    width: 60%;
+    margin: 0 auto 3vh auto;
+    display: flex;
+    flex-direction: column;
+}
+
+main #task-details #task-details-container #description-title {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: var(--white-color);
+    margin-bottom: 3vh;
+}
+
+main #task-details #task-details-container textarea {
+    height: 40vh;
+    font-size: 1em;
+    font-weight: 300;
+    border-radius: 20px;
+    padding: 1em 1.5vw;
+    background-color: var(--textarea-background);
+    text-align: justify;
+    resize: none;
+}
+
+/* === Media Queries === */
+@media screen and (max-width: 1102px) {
+    main #task-details #task-details-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 871px) {
+    main #task-details #task-details-container {
+        width: 80%;
+    }
+
+    main #task-details #task-details-container textarea {
+        padding: 1em 5vw;
+    }
+}

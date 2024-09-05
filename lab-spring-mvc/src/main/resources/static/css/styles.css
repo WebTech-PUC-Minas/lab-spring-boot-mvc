@@ -1,0 +1,183 @@
+/* === Color Variables === */
+:root {
+    --goldenrod-yellow: #fdbc2f;
+    --pale-gold-yellow: #fede97;
+    --midnight-navy-blue: #1f2733;
+    --charcoal-blue: #2a3341;
+    --pink-color: #e60965;
+    --textarea-background: #fffaef;
+    --black-color: #000;
+    --white-color: #fff;
+}
+
+/* === Generic Styles === */
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--charcoal-blue);
+}
+
+a {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+a:link {
+    color: var(--black-color);
+}
+
+a:visited {
+    color: var(--black-color);
+}
+
+::selection {
+    background-color: var(--goldenrod-yellow);
+    color: var(--midnight-navy-blue);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--midnight-navy-blue);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--pale-gold-yellow);
+    width: 10px;
+}
+
+main {
+    min-height: 90vh;
+}
+
+/* === Header === */
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 10vh;
+    padding: 0 2rem;
+    background-color: var(--goldenrod-yellow);
+    box-shadow: 0px 2px 20px 2px var(--charcoal-blue);
+    color: var(--black-color);
+    z-index: 1000;
+}
+
+header img {
+    width: 120px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin: 0 1rem;
+    color: var(--black-color);
+    transition: ease all 0.5s;
+}
+
+nav a:hover {
+    border-bottom: 1px solid var(--midnight-navy-blue);
+}
+
+header .nav_btn {
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--black-color);
+    display: none;
+    font-size: 1.3rem;
+}
+
+header div,
+nav {
+    display: flex;
+    align-items: center;
+}
+
+header i {
+    font-size: 1.2em;
+    margin-right: 0.5vw;
+}
+
+/* === Footer === */
+footer {
+    font-size: 14px;
+    font-weight: 300;
+    height: 8vh;
+    padding: 0 2vw;
+    background-color: var(--goldenrod-yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer a:hover {
+    border-bottom: 1px solid var(--black-color);
+}
+
+img.trash {
+    cursor: pointer;
+}
+
+/* === Media Queries === */
+@media screen and (max-width: 1024px) {
+    header {
+        justify-content: space-between;
+    }
+
+    header i {
+        margin-right: 3vw;
+    }
+
+    header .nav_btn {
+        display: block;
+    }
+
+    header nav {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        background-color: var(--goldenrod-yellow);
+        transition: 1s;
+    }
+
+    header .responsive_nav {
+        transform: translateY(100vh);
+    }
+
+    nav .nav_close_btn {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+    }
+}

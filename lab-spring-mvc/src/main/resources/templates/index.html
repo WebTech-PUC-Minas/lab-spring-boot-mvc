@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="authors" content="Artur Bomtempo e Pedro Félix" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Listify</title>
+  
+  <!-- === Favicon === -->
+  <link rel="icon" type="image/svg+xml" th:href="@{/images/favicon.png}" />
+
+  <!-- === Font === -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+  />
+
+  <!-- === Font Awesome === -->
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+  />
+
+  <!-- === CSS Files === -->
+  <link rel="stylesheet" th:href="@{/css/styles.css}" />
+  <link rel="stylesheet" th:href="@{/css/home/home.css}" />
+
+</head>
+<body>
+  <!-- === Header === -->
+  <header>
+    <a href="/" >
+      <img th:src="@{/images/black-logo.png}" alt="Logotipo da Listify" />
+    </a>
+    <nav>
+      <a href="/" onclick="showNavbar()">Home</a>
+      <a href="/tasks" onclick="showNavbar()"><i class="fa-regular fa-clock"></i> Pendentes</a>
+      <a href="/tasks/completed" onclick="showNavbar()"><i class="fa-regular fa-square-check"></i> Concluídas</a>
+      <button class="nav_btn nav_close_btn" onclick="showNavbar()">
+        <span class="fa fa-times"></span>
+      </button>
+    </nav>
+    <button class="nav_btn" onclick="showNavbar()">
+      <span class="fa fa-bars"></span>
+    </button>
+  </header>
+
+  <!-- === Content === -->
+  <main>
+    <!-- === About Section === -->
+    <section id="about">
+      <div id="image">
+        <img th:src="@{/images/home/main/bee.png}" alt="Imagem da abelha" />
+      </div>
+      <div id="content">
+        <h1 id="title">O que é o Listify?</h1>
+        <p id="text">
+          Listify é uma aplicação web voltada para a criação e gerenciamento de uma lista de tarefas, projetada para fortalecer seus conhecimentos em Spring Boot MVC. Desenvolvido como um projeto prático no Lab da WebTech, o Listify oferece uma interface amigável onde você pode organizar suas tarefas diárias enquanto explora e consolida conceitos fundamentais de desenvolvimento backend e frontend de forma integrada.
+        </p>
+      </div>
+    </section>
+
+    <!-- === Menu Section === -->
+    <section id="menu">
+      <h1 id="title">Escolha por onde começar:</h1>
+      <div id="options">
+        <a href="/tasks">
+          <div class="option">
+            <div class="icons">
+              <img th:src="@{/images/home/menu/plus.png}" alt="Ícone de adição" />
+              <img th:src="@{/images/home/menu/clock.png}" alt="Ícone de relógio" />
+            </div>
+            <h3>Criar & Pendentes</h3>
+          </div>
+        </a>
+        <a href="/tasks/completed">
+          <div class="option">
+            <div class="icons">
+              <img th:src="@{/images/home/menu/check.png}" alt="Ícone de conclusão" />
+            </div>
+            <h3>Concluídas</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- === Developers Section === -->
+    <section id="developers">
+      <h1 id="title">Conheça nossos Desenvolvedores</h1>
+      <div id="options">
+        <div class="option">
+          <div class="avatar">
+            <img th:src="@{/images/home/developers/artur.png}" alt="Avatar de Artur Bomtempo" />
+          </div>
+          <h3>
+            Artur Bomtempo | <a href="https://arturbomtempo.dev/" target="_blank">Portfólio</a>
+          </h3>
+        </div>
+        <div class="option">
+          <div class="avatar">
+            <img th:src="@{/images/home/developers/pedro.png}" alt="Avatar de Pedro Félix" />
+          </div>
+          <h3>
+            Pedro Félix | <a href="https://prismatic-semifreddo-4127a3.netlify.app/" target="_blank">Portfólio</a>
+          </h3>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- === Footer === -->
+  <footer>
+    <p>
+      Desenvolvido por
+      <a href="https://github.com/ArturColen" target="_blank">Artur Bomtempo</a> & 
+      <a href="https://github.com/Pedro-HFelix" target="_blank">Pedro Félix</a>
+    </p>
+  </footer>
+
+  <!-- === JS File === -->
+  <script th:src="@{/js/menu.js}"></script>
+</body>
+</html>
