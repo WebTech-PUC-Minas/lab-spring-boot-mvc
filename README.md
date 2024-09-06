@@ -1296,11 +1296,10 @@ Esta página é projetada para exibir informações detalhadas sobre uma tarefa 
         <img th:src="@{/images/black-logo.png}" alt="Logotipo da Listify" />
     </a>
     <nav>
-        <a href="/" onclick="showNavbar()">Home</a>
-        <a href="/manage-tasks" onclick="showNavbar()">
+        <a href="/tasks" onclick="showNavbar()">
             <i class="fa-regular fa-clock"></i> Pendentes
         </a>
-        <a href="/completed-tasks" onclick="showNavbar()">
+        <a href="/tasks/completed" onclick="showNavbar()">
             <i class="fa-regular fa-square-check"></i> Concluídas
         </a>
         <button class="nav_btn nav_close_btn" onclick="showNavbar()">
